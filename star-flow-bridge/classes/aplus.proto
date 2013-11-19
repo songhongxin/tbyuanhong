@@ -1,0 +1,68 @@
+//
+// 说明：
+//      protobuf版本：2.4.1，建议使用相同版本。
+//      注释中的type信息是用来方便自动生成代码。
+//      添加字段一定要后面依次添加，按序号递增。
+//
+
+package com.etao.lz.star.spout;
+
+message AplusLog
+{
+    required bytes version             = 1     [default = "1.0"];
+    required uint32 ip                 = 2;
+    required uint32 time               = 3;
+    required bytes url                 = 4;
+    required bytes user_agent          = 5;
+
+    optional bytes linezing_session    = 6;  // type:cookie, cookie: lzs
+    optional bytes cna                 = 7;  // type:cookie, cookie: cna, arg: cna
+    optional bytes adid                = 8;  // type:cookie, cookie: adid, arg: ad_id
+    optional bytes amid                = 9;  // type:cookie, cookie: amid, arg: am_id
+    optional bytes cmid                = 10; // type:cookie, cookie: cmid, arg: cm_id
+    optional bytes pmid                = 11; // type:cookie, cookie: pmid, arg: pm_id
+    optional bytes uid                 = 12; // type:cookie, cookie: cnaex, arg: userid
+    optional bytes sid                 = 13; // type:cookie, cookie: sc
+
+    optional bytes pre                 = 14; // type:arg
+
+    optional bytes scr                 = 16; // type:arg
+    optional bytes nick                = 17; // type:arg
+    optional bytes at_autype           = 18; // type:arg
+    optional uint32 bbid               = 19; // type:arg
+    optional uint32 at_isb             = 20; // type:arg
+    optional uint32 at_mall_pro_re     = 21; // type:arg
+    optional uint32 at_mall_re         = 22; // type:arg
+    optional bytes at_shoptype         = 23; // type:arg
+    optional uint32 b2c_auction        = 24; // type:arg
+    optional uint32 b2c_brand          = 25; // type:arg
+    optional bytes b2c_orid            = 26; // type:arg
+    optional bytes at_type             = 27; // type:arg
+    optional bytes category            = 28; // type:arg
+    optional bytes marketinfo          = 29; // type:arg, real arg: marketInfo
+    optional bytes atp_isdpp           = 30; // type:arg
+    optional bytes at_bucketid         = 31; // type:arg
+    optional bytes at_insid            = 32; // type:arg
+    optional bytes at_jporid           = 33; // type:arg
+
+    optional bytes wm_pageid           = 36; // type:arg
+    optional bytes wm_prototypeid      = 37; // type:arg
+    optional bytes wm_sid              = 38; // type:arg
+    optional bytes spm_cnt             = 39; // type:arg, real arg: spm-cnt
+    optional bytes title               = 40; // type:arg
+
+    optional bytes url_type            = 41; // type:arg
+    optional bytes ref_type            = 42; // type:arg
+    optional bytes ref_shopid          = 43; // type:arg
+    optional bytes logkey              = 44; // 埋点uri标记(eg: 1.gif, search)
+    optional bytes gmkey               = 45; // type:arg
+    optional bytes gokey               = 46; // 此参数单独处理 (模拟点击和gif埋点两种情况)
+    optional bytes logtype             = 47; // type:arg
+    optional bytes atp_sid             = 48; // type:cookie cookie: atpsid
+    optional uint32 userid             = 49; // type:arg
+
+    optional bytes spm_url             = 51; // type:arg, real arg: spm-url
+    optional bytes spm_pre             = 52; // type:arg, real arg: spm-pre
+}
+
+

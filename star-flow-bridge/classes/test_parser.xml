@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogBuilder>flow</LogBuilder>
+	<LogOutput class="com.etao.lz.star.output.WriteToHBaseProcessor">
+	<Configuration>
+		<Attribute name="test" value="test"/>
+	</Configuration>
+	<Output>abc</Output>		
+	</LogOutput>
+</BoltConfig>

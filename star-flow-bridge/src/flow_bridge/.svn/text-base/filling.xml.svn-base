@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogProcessor class="com.etao.lz.star.bolt.LzdtEtlFillProcessor"/>
+	
+	<LogProcessor class="com.etao.lz.star.bolt.LzstEtlFillProcessor"/>
+			
+	<LogProcessor class="com.etao.lz.star.bolt.RegExprProcessor">
+		<Configuration>
+		<Attribute name="input_field" value="refer_url"/>
+		<Attribute name="output_field" value="ref_baobei"/>
+		<Attribute name="regexpr_ref_baobei">
+		<![CDATA[
+				 5, ^http:\/\/(edyna\.)?item\.(lp\.|beta\.)?taobao\.com(:80)?\/item\.htm\?(.+&)?id=(\d+)(&|#|$)
+				 
+				 5, ^http:\/\/(item|detail)\.tmall\.com(:80)?\/.*(&|\?)(item_num_id|id)=(\d+)(&|$)
+				 6, ^http:\/\/(spu|detail)\.(taobao|tmall)\.com(:80)?\/([\w-]+\/)?spu_detail\.htm\?(.+&)?mallstitemid=(\d+)(&|$)
+				 6, ^http:\/\/(spu|detail)\.(taobao|tmall)\.com(:80)?\/([\w-]+\/)?spu_detail\.htm\?(.+&)?default_item_id=(\d+)(&|$)
+				 3, ^http:\/\/kezhan\.trip\.taobao\.com(:80)?\/item\.htm\?(.+&)?item_id=(\d+)(&|$)
+				 3, ^http:\/\/item\.lp\.taobao\.com(:80)?\/item\.htm\?(item_id|id)=(\w+)
+				 3, ^http:\/\/wt\.taobao\.com(:80)?\/detail\.htm\?(.+&)?id=(\d+)(&|$)
+				 4, ^http:\/\/(meal|house)\.taobao\.com(:80)?\/item\.htm\?(.+&)?id=(\d+)(&|$)
+				 4, ^http:\/\/(msn\.)?item\.(lp\.)?taobao\.com(:80)?\/auction\/item_detail\.htm\?item_num_id=(\d+)$
+				 3, ^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/spu-(\d+).*$
+				 3, ^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/spu_detail\.htm\?spu_id=(\d+)$
+				 5, ^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/(auction\/)?item_detail\.(htm|jhtml)\?.*item_num_id=(\d+).*$
+				 4, ^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/(item|product)-(\d+)(-{1,3}\d+)?\.htm.*$
+				 4, ^http:\/\/(item|spu|detail)\.tmall\.com(:80)?\/spu-(\d+)-(\d+)(\.|-)
+				 2, ^http:\/\/item\.hitao\.com(:80)?\/item-(\d+)\.htm$
+				 3, ^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/item\.htm\?id=(\d+)&.+ali_trackid=2:.+$				 
+				 3, ^http:\/\/item\.wmlp\.com(:80)?\/item\.htm\?(item_id|id)=(\w+)
+				 5, ^http:\/\/detail\.(taobao|tmall)\.com(:80)?\/item\.htm\?(.+&)?(item_id|id)=(\d+)(&|$)
+				 7, ^http:\/\/(edyna\.)?(archive|auction1|item)\.(lp\.)?taobao\.com(:80)?\/\/?(auction\/)?item_detail-(\d*db\w+|null|\w+|\d+)?-(\w+)\.(jhtml|htm).*$
+				 9, ^http:\/\/(edyna\.)?(item|auction1)\.(lp\.)?taobao\.com(:80)?\/\/?(auction\/)?(item_detail|itemdetail)\.(htm|jhtml)\?.*(item_id|itemid)=([^&]+).*$	
+				 3, ^http:\/\/detail\.tmall\.hk(:80)?\/.*item\.htm\?(.+&)?id=(\d+)(&|$)			 				 
+		]]>
+		</Attribute>
+		</Configuration>				
+	</LogProcessor>
+	
+	<LogProcessor class="com.etao.lz.star.bolt.LzreturnlFillProcessor"/>
+		
+</BoltConfig>

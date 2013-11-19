@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<SpoutConfig>
+	<LogGenerator class="com.etao.lz.star.spout.FileLogGenerator" name="tt_bizorder_spout">
+		<Configuration>
+			<Attribute name="input_path" value="/local_bizorder/biz_order.data" />
+			<Attribute name="tt_tag" value="tc_biz_order" />
+			<Attribute name="log_builder" value="com.etao.lz.star.spout.MySQLLogBuilder"/>
+			<Attribute name="log_class" value="business" />
+			<Attribute name="emit_check_period" value = "0"/>
+			<Attribute name="seperators" value="2,1" />
+		</Configuration>
+		<LogMapping name="tc_biz_order">
+			<Mapping name="log_version" value="@int 1"/>
+			<Mapping name="log_src" value = "tc_biz_order"/>
+			<Mapping name="dest_type" value = "biz_order"/>
+			<Mapping name="order_id" value ="@field2 6 1"/>
+			<Mapping name="parent_id" value ="@field2 6 37"/>
+			<Mapping name="seller_id" value ="@field2 6 6"/>
+			<Mapping name="buyer_id" value ="@field2 6 5"/>
+			<Mapping name="auction_id" value ="@field2 6 7"/>
+			<Mapping name="auction_price" value="@bigint @field2 6 10"/>
+			<Mapping name="adjust_fee" value="@bigint @field2 6 38"/>
+			<Mapping name="discount_fee" value="@bigint @field2 6 39"/>
+			<Mapping name="buy_amount" value="@bigint @field2 6 11"/>
+			<Mapping name="gmt_create" value="@field2 6 15"/>
+			<Mapping name="gmt_modified" value="@field2 6 16"/>
+			<Mapping name="pay_time" value="@field2 6 32"/>
+			<Mapping name="is_detail" value="@int @field2 6 34"/>
+			<Mapping name="is_main" value="@int @field2 6 35"/>
+			<Mapping name="shop_id" value="@field2 6 44"/>
+			<Mapping name="pay_status" value="@int @field2 6 13"/>
+		</LogMapping>
+		
+		 		
+	</LogGenerator>
+</SpoutConfig>

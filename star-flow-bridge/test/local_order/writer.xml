@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogOutput class="com.etao.lz.star.output.WriteToHBaseProcessor">
+	<Configuration>
+		<Attribute name="use_fixed_taskid" value="true" />
+		<Attribute name="mem_check_interval" value="1000" />
+		<Attribute name="refresh_queue_interval" value="3000" />
+		
+		<Attribute name="output_file_base" value="/tmp" />
+			
+		<Attribute name="output_tables" value="alipay_rtn_order" />
+		<Attribute name="alipay_rtn_order_input" value="alipay_rtn_order,com.etao.lz.star.output.hbase.BusinessRowkeyBuilder" />
+	</Configuration>
+	</LogOutput>			
+</BoltConfig>

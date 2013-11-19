@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<CommonConfig>
+		<Configuration>
+			<Attribute name="spout_number" value = "1"/>
+			<Attribute name="filling_number" value = "8"/>
+			<Attribute name="rulling_number" value = "8"/>
+			<Attribute name="business_number" value = "8"/>
+			<Attribute name="writer_number" value = "8"/>
+			<Attribute name="bool_test" value = "true"/>
+			<Attribute name="script">
+				<![CDATA[
+					a && b
+				]]>
+			</Attribute>
+		</Configuration>
+</CommonConfig>

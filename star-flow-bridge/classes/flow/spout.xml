@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<SpoutConfig>
+	<LogGenerator class="com.etao.lz.star.spout.TTLogGenerator" name="browse_aplus_log">
+		<Configuration>
+			<Attribute name="topic" value="LHW_P1_1HOUR_004" />
+			<Attribute name="subscriber" value="1114163517A8GFCJ5U" />
+			<Attribute name="router" value="ttrouter3.cm3.tbsite.net:9090,ttrouter2.cm3.tbsite.net:9090,ttrouter1.cm4.tbsite.net:9090,ttrouter2.cm4.tbsite.net:9090,ttrouter1.cm6.tbsite.net:9090,ttrouter2.cm6.tbsite.net:9090" />
+			<Attribute name="username" value="xxdf" />
+			<Attribute name="password" value="xxdf" />
+			<Attribute name="poolsize" value="5" />
+			<Attribute name="log_builder" value="com.etao.lz.star.spout.APlusLogBuilder" />
+			<Attribute name="log_class" value="flow" />
+			<Attribute name="spout_number" value = "10"/>
+			<Attribute name="emit_check_period" value = "300000"/>
+
+		</Configuration>
+		<LogMapping name="aplus">
+			<Mapping name="log_version" value="@int 2"/>
+			<Mapping name="log_src" value = "aplus_browse"/>
+			<Mapping name="dest_type" value = "browse"/>
+			<Mapping name="uid" value = "@aplus_bytes uid"/>
+			<Mapping name="url" value = "@aplus_bytes url"/>
+			<Mapping name="sid" value = "@aplus_bytes sid"/>
+			<Mapping name="mid" value = "@aplus_bytes cna"/>
+			<Mapping name="title" value = "@unescape @aplus_bytes title"/>
+			<Mapping name="refer_url" value = "@aplus_bytes pre"/>
+			<Mapping name="agent" value = "@aplus_bytes useragent"/>
+		</LogMapping>
+	</LogGenerator>
+</SpoutConfig>

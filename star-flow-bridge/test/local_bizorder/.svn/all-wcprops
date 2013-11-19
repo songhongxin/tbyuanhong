@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder
+END
+common.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder/common.xml
+END
+biz_order.data
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder/biz_order.data
+END
+filling.xml
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder/filling.xml
+END
+spout.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder/spout.xml
+END
+writer.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/DW/!svn/ver/245932/data_bj/LineZing/shopstats/backend/star-flow-bridge/test/local_bizorder/writer.xml
+END

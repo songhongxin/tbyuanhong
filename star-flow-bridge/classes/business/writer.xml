@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogOutput class="com.etao.lz.star.output.WriteToHBaseProcessor">
+	<Configuration>
+		<Attribute name="HbasePort" value="3325"/>
+		<Attribute name="Zookeepercluster" value="my161205.cm6,my161206.cm6,my161207.cm6,my161208.cm6,my161209.cm6"/>
+		<Attribute name="timeToLive" value="432000"/>
+		<Attribute name="writeBufferSize" value="5242880"/>
+		<Attribute name="refresh_queue_interval" value="5000" />
+		
+		<Attribute name="output_tables" value="biz_order,pay_order,alipay_rtn_order" />
+		<Attribute name="biz_order_input" value="biz_order,com.etao.lz.star.output.hbase.BizOrderRowKeyBuilder,biz_order_index" />
+		<Attribute name="pay_order_input" value="pay_order,com.etao.lz.star.output.hbase.PayOrderRowKeyBuilder,pay_order_index" />
+		<Attribute name="alipay_rtn_order_input" value="alipay_rtn_order,com.etao.lz.star.output.hbase.BusinessRowkeyBuilder" />
+	</Configuration>
+	<Output></Output>		
+	</LogOutput>
+	
+	<LogOutput class="com.etao.lz.star.output.BroadcastLogOutput"/>		
+</BoltConfig>

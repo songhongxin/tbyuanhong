@@ -1,0 +1,304 @@
+<?xml version="1.0"?>
+<xmlconf>
+        <taoself  no="1" src_id="6">
+                <direct no="1">
+                        <patten no="1" url="" src_id="6" name="直接访问"></patten>
+                </direct>
+        </taoself>
+        <ad no="2" src_id="8">
+                <p4p no="1">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=1_.+$" src_id="11" name="直通车" key="ali_refid=.+:\w+:(\d+):(.*?):" keypos="2" use="url"></patten>
+                </p4p>
+                <taoke no="2">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=2(:|%3A).+$" src_id="10" name="淘宝客" key="(\?|&amp;)ref=(.*?)(&amp;|$)" keypos="2" use="url" host="1" ></patten>
+                </taoke>
+                <ecpm no="3">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=(3|17)_.+$" src_id="13" name="钻石展位" use="url"></patten>
+                </ecpm>
+                <djcpm no="4">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=(12|20)_.+$" src_id="14" name="定价CPM" use="url"></patten>
+                </djcpm>
+                <maiba no="5">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/go\/act\/other\/maiba" src_id="9" name="超级麦霸"></patten>
+                </maiba>
+                <lianbo no="6">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=5_.+$" src_id="18" name="全国联播" use="url"></patten>
+                </lianbo>
+                <pinpai no="7">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=(18|9)_.+$" src_id="12" name="品牌广告" use="url"></patten>
+                </pinpai>
+                <wwad no="8">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=10_.+$" src_id="15" name="阿里旺旺广告" use="url"></patten>
+                </wwad>
+                <rmedia no="9">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=11(&amp;|$)" src_id="16" name="富媒体广告" use="url"></patten>
+                </rmedia>
+                <banner no="10">
+                        <patten no="1" url="click\.tz\.simba\.taobao\.com" src_id="17" name="商业广告"></patten>
+                        <patten no="2" url="taobaoafp\.allyes\.(com|cn)" src_id="17" name="商业广告"></patten>
+                        <patten no="3" url="cn\.rd\.yahoo\.com" src_id="17" name="商业广告"></patten>
+                </banner>
+                <cpmplus no="11">
+                        <patten no="1" url="(taobao|tmall)\.com(:80)?\/.*ali_trackid=15_.+$" src_id="80" name="钻石展位+" use="url"></patten>
+                </cpmplus>
+                <juhuasuan no="12">
+                        <patten no="1" url="(\/|\.)ju\.taobao\.com(:80)?" src_id="40" name="聚划算"></patten>
+                </juhuasuan>
+        </ad>
+        <taoself  no="3" src_id="1">
+                <direct no="1">
+                        <patten no="1" url="" src_id="6" name="直接访问"></patten>
+                </direct>
+                <favshop no="2">
+                        <patten no="1" url="\/favorite\.taobao\.com(:80)?\/.*itemtype=0(&amp;|$)" src_id="2" name="店铺收藏" full="1"></patten>
+                </favshop>
+                <favitem no="3">
+                        <patten no="1" url="\/favorite\.taobao\.com(:80)?\/.*itemtype=1(&amp;|$)" src_id="3" name="宝贝收藏" full="1"></patten>
+                </favitem>
+                <buyjia no="5">
+                        <patten no="1" url="(\/|\.)(i|t)\.taobao\.com(:80)?" src_id="5" name="我是买家"></patten>
+                        <patten no="2" url="(\/|\.)trade\.taobao\.com(:80)?\/trade\/itemlist\/list_bought_items\.htm" src_id="5" name="我是买家"></patten>
+                        <patten no="3" url="(\/|\.)favorite\.taobao\.com(:80)?\/(bought_shop_list|auction_in_shop)\.htm" src_id="5" name="我是买家"></patten>
+                        <patten no="4" url="(\/|\.)trade\.taobao\.com(:80)?\/trade\/detail" src_id="5" name="我是买家"></patten>
+                </buyjia>
+                <gouwuche no="6">
+                        <patten no="1" url="(\/|\.)(buy|cart)\.(taobao|tmall)\.com(:80)?" src_id="7" name="购物车"></patten>
+                </gouwuche>
+        </taoself>
+        <taobao no="4" src_id="19">
+                <shopsearch no="1">
+                        <patten no="1" url="(\/|\.)shopsearch\.taobao\.com(:80)?" src_id="21" name="淘宝店铺搜索"></patten>
+                        <patten no="2" url="(\/|\.)s\.taobao\.com(:80)?\/search\?(.+&amp;)?v=shopsearch" src_id="21" name="淘宝店铺搜索" full="1"></patten>
+                </shopsearch>
+                <insearch no="2">
+                   <patten no="1" url="(\/|\.)search1\.taobao\.com(:80)?\/browse\/" src_id="20" name="淘宝搜索" key="\/browse\/\d+(-\d+)*\/[n|t]-([\w,-]+)\.htm.*$" keypos="2"></patten>
+                        <patten no="2" url="\/search\.taobao\.com(:80)?\/search" src_id="20" name="淘宝搜索" res="new" key="(search\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+                        <patten no="3" url="(\/|\.)s\.taobao\.com(:80)?\/search" src_id="20" name="淘宝搜索" res="new" key="(search\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+                        <patten no="4" url="\/search\.hitao\.com(:80)?\/item_search\.htm" src_id="20" name="淘宝搜索" res="new" key="(item_search\.htm\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+                </insearch>
+                <category no="3">
+                        <patten no="1" url="(\/|\.)list\d?\.taobao\.com(:80)?" src_id="22" name="淘宝类目"></patten>
+                </category>
+	        	<tmallsearch no="4">
+                        <patten no="1" url="(\/|\.)list\.tmall\.com(:80)?\/search_product\.htm" src_id="36" name="商城搜索" res="new" key="(search_product\.htm\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+	        	</tmallsearch>
+                <wangwang no="5">
+                        <patten no="1" url="127.0.0.1:\d+\/auth" src_id="32" name="阿里旺旺非广告"></patten>
+                </wangwang>
+                <aigou no="6">
+                        <patten no="1" url="(\/|\.)aigou\.taobao\.com(:80)?" src_id="99" name="爱购"></patten>
+                </aigou>
+                <taojinbi no="7">
+                        <patten no="1" url="(\/|\.)(taojinbi|vip)\.taobao\.com(:80)?" src_id="46" name="淘金币"></patten>
+                </taojinbi>
+                <tejia no="8">
+                        <patten no="1" url="(\/|\.)tejia\.taobao\.com(:80)?" src_id="50" name="天天特价"></patten>
+                </tejia>
+	        	<taobaotry no="9">
+                        <patten no="1" url="(\/|\.)try\.taobao\.com(:80)?" src_id="44" name="试用中心"></patten>
+                </taobaotry>
+                <rate no="10">
+                        <patten no="1" url="(\/|\.)rate\.taobao\.com(:80)?" src_id="31" name="淘宝信用评价"></patten>
+                </rate>
+                <sctopic no="11">
+                        <patten no="1" url="(\/|\.)(www\.)?tmall\.com(:80)?\/go\/" src_id="38" name="商城专题"></patten>
+                </sctopic>
+                <tksearch no="12">
+                     <patten no="1" url="(\/|\.)search8\.taobao\.com(:80)?\/browse\/" src_id="33" name="淘宝客搜索" key="\/browse\/\d+(-\d+)*\/[n|t]-([\w,-]+)\.htm.*$" keypos="2"></patten>
+                        <patten no="2" url="\/s8\.taobao\.com(:80)?\/search" src_id="33" name="淘宝客搜索" res="new" key="(search\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+                </tksearch>
+	        	<tmallshops no="13">
+                        <patten no="1" url="(\/|\.)list\.tmall\.com(:80)?\/search_shop\.htm" src_id="37" name="商城店铺搜索" res="new" key="(search_shop\.htm\?|&amp;)q=(.*?)(&amp;|$)" keypos="2"></patten>
+	        	</tmallshops>
+                <community no="14">
+                        <patten no="1" url="(\/|\.)(forum|bbs)\.taobao\.com(:80)?" src_id="54" name="淘宝社区"></patten>
+                </community>
+                <tbfirstpage no="15">
+                        <patten no="1" url="(\/|\.)www\.taobao\.com(:80)?$" src_id="24" name="淘宝首页"></patten>
+                </tbfirstpage>
+                <scfirstpage no="16">
+                        <patten no="1" url="(\/|\.)www\.tmall\.com(:80)?$" src_id="34" name="商城首页"></patten>
+                        <patten no="2" url="(\/|\.)www\.tmall\.com(:80)?\/\?ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=$" src_id="34" name="商城首页" full="1"></patten>
+                        <patten no="3" url="(\/|\.)www\.tmall\.com(:80)?\/\?" src_id="34" name="商城首页" full="1"></patten>
+                </scfirstpage>
+                <tbtopic no="17">
+                        <patten no="1" url="(\/|\.)www\.taobao\.com(:80)?\/go\/" src_id="23" name="淘宝专题"></patten>
+                        <patten no="2" url="(\/|\.)mservice\.taobao\.com(:80)?\/" src_id="23" name="淘宝专题"></patten>
+                </tbtopic>
+                <tmallcategory no="18">
+                        <patten no="1" url="(\/|\.)list\.tmall\.com(:80)?\/" src_id="35" name="商城类目"></patten>
+                </tmallcategory>
+                <tmallchannel no="19">
+                        <patten no="1" url="(\/|\.)(3c|brand|zhekou|global|cz|beauty|xie|yundong|jia|010jia)\.tmall\.com(:80)?" src_id="39" name="商城频道"></patten>
+                </tmallchannel>
+                <bangpai no="20">
+                        <patten no="1" url="(\/|\.)bangpai\.taobao\.com(:80)?" src_id="57" name="淘宝帮派"></patten>
+                </bangpai>
+                <hitao no="21">
+                        <patten no="1" url="\/www\.hitao\.com(:80)?" src_id="27" name="嗨淘"></patten>
+                        <patten no="2" url="\/tbjx\.hitao\.com(:80)?" src_id="27" name="嗨淘"></patten>
+                        <patten no="3" url="\/haiwai\.hitao\.com(:80)?" src_id="27" name="嗨淘"></patten>
+                        <patten no="4" url="\/bbs\.hitao\.com(:80)?" src_id="27" name="嗨淘"></patten>
+                </hitao>
+                <poster no="22">
+                        <patten no="1" url="(\/|\.)poster\.taobao\.com(:80)?" src_id="28" name="淘宝画报"></patten>
+                        <patten no="2" url="(\/|\.)huabao\.taobao\.com(:80)?" src_id="28" name="淘宝画报"></patten>
+                </poster>
+                <channel no="23">
+                        <patten no="1" url="(\/|\.)(shouji|baby|man|lady|fashion|beauty|luxury|life|sports|it)\.taobao\.com(:80)?" src_id="25"  name="淘宝频道"></patten>
+                </channel>
+                <taomm no="24">
+                        <patten no="1" url="(\/|\.)mm\.taobao\.com(:80)?" src_id="41" name="淘女郎"></patten>
+                </taomm>
+                <xpcenter no="25">
+                        <patten no="1" url="(\/|\.)xin\.taobao\.com(:80)?" src_id="43" name="新品中心"></patten>
+                </xpcenter>
+                <zgshuo no="26">
+                        <patten no="1" url="(\/|\.)(shuo|daren|dongtai)\.taobao\.com(:80)?" src_id="45" name="店铺动态"></patten>
+                </zgshuo>
+                <fengxiang no="27">
+                        <patten no="1" url="(\/|\.)(fx|wow)\.taobao\.com(:80)?" src_id="47" name="宝贝分享"></patten>
+                </fengxiang>
+                <global no="28">
+                        <patten no="1" url="(\/|\.)(global|g)\.taobao\.com(:80)?" src_id="48" name="全球购"></patten>
+                </global>
+                <dpjie no="29">
+                        <patten no="1" url="(\/|\.)jie\.taobao\.com(:80)?" src_id="49" name="店铺街"></patten>
+                </dpjie>
+                <taosale no="30">
+                        <patten no="1" url="(\/|\.)sale\.taobao\.com(:80)?" src_id="52" name="淘宝促销"></patten>
+                </taosale>
+                <jifenbao no="31">
+                        <patten no="1" url="(\/|\.)\w+\.taobao\.com(:80)?\/market\/jifenbao" src_id="53" name="集分宝"></patten>
+                </jifenbao>
+                <quanzi no="32">
+                        <patten no="1" url="(\/|\.)quanzi\.taobao\.com(:80)?" src_id="76" name="淘宝圈子"></patten>
+                </quanzi>
+                <taojiehun no="33">
+                        <patten no="1" url="(\/|\.)jiehun\.taobao\.com(:80)?" src_id="81" name="淘宝婚庆"></patten>
+                </taojiehun>
+                <qingcangjie no="34">
+                        <patten no="1" url="(\/|\.)qin(g)?\.taobao\.com(:80)?" src_id="82" name="清仓街"></patten>
+                </qingcangjie>
+                <taotuitui no="35">
+                        <patten no="1" url="(\/|\.)tui(\.m)?\.etao\.com(:80)?" src_id="84" name="淘宝推推"></patten>
+                        <patten no="2" url="(\/|\.)i\.m\.taobao\.com(:80)?" src_id="84" name="淘宝推推"></patten>
+                </taotuitui>
+                <taoyushou no="36">
+                        <patten no="1" url="(\/|\.)(yu|yushou)\.taobao\.com(:80)?" src_id="85" name="淘宝预售"></patten>
+                </taoyushou>
+                <taoxingdian no="37">
+                        <patten no="1" url="(\/|\.)star\.taobao\.com(:80)?" src_id="86" name="淘宝星店"></patten>
+                </taoxingdian>
+                <cuxiaohui no="38">
+                        <patten no="1" url="(\/|\.)cu\.taobao\.com(:80)?" src_id="97" name="促销汇"></patten>
+                </cuxiaohui>
+                <chaoyouhui no="39">
+                        <patten no="1" url="(\/|\.)you\.taobao\.com(:80)?" src_id="96" name="超优汇"></patten>
+                </chaoyouhui>
+                <tmallchaoshi no="40">
+                        <patten no="1" url="(\/|\.)chaoshi\.tmall\.com(:80)?" src_id="119" name="天猫超市"></patten>
+                </tmallchaoshi>
+                <taochima no="41">
+                        <patten no="1" url="(\/|\.)size\.taobao\.com(:80)?" src_id="120" name="淘宝尺码"></patten>
+                </taochima>
+                <paimaihui no="42">
+                        <patten no="1" url="(\/|\.)paimai\.taobao\.com(:80)?" src_id="121" name="拍卖会"></patten>
+                </paimaihui>
+                <tmallyushou no="43">
+                        <patten no="1" url="(\/|\.)yushou\.tmall\.com(:80)?" src_id="122" name="天猫预售"></patten>
+                </tmallyushou>
+                <dianpu no="44">
+                     <patten no="1" url="(\/|\.)shop(\d+)\.taobao\.com(:80)?" src_id="30" name="淘宝其他店铺" key="shop(\d+)\.taobao"  keypos="1" host="1"></patten>
+                </dianpu>
+		        <tbunknown no="45">
+                        <patten no="1" url=".+\.taobao\.com(:80)?" src_id="59" name="淘宝站内其他" host="1"></patten>
+                        <patten no="2" url=".+\.tmall\.(com|hk)(:80)?" src_id="59" name="淘宝站内其他" host="1"></patten>
+                </tbunknown>
+        </taobao>
+        <sns  no="5" src_id="112">
+                <weibo no="1">
+                        <patten no="1" url="(\/|\.)weibo\.(com|cn)" src_id="113" name="新浪微博"></patten>
+                </weibo>
+                <meilishuo no="2">
+                        <patten no="1" url="(\/|\.)meilishuo\.com" src_id="114" name="美丽说"></patten>
+                </meilishuo>
+                <mogujie no="3">
+                        <patten no="1" url="(\/|\.)mogujie\.com" src_id="115" name="蘑菇街"></patten>
+                </mogujie>
+                <txweibo no="4">
+                        <patten no="1" url="(\/|\.)t\.qq\.com" src_id="116" name="腾讯微博"></patten>
+                </txweibo>
+                <qzone no="5">
+                        <patten no="1" url="(\/|\.)qzone\.qq\.com" src_id="117" name="QQ空间"></patten>
+                </qzone>
+        </sns>
+        <etao  no="6" src_id="104">
+                <etaofirst no="1">
+                        <patten no="1" url="\/www\.etao\.com(:80)?" src_id="105" name="一淘首页"></patten>
+                </etaofirst>
+                <etaosearch no="2">
+                        <patten no="1" url="(\/|\.)s\.etao\.com(:80)?" src_id="106" name="一淘搜索"></patten>
+                </etaosearch>
+                <etaounknown no="3">
+                        <patten no="1" url=".+\.etao\.com(:80)?" src_id="110" name="一淘其他" host="1"></patten>
+                </etaounknown>
+        </etao>
+        <search no="7" src_id="61">
+                <baidu no="1">
+                        <patten no="1" url="baidu\.com(:80)?\/" src_id="63" name="百度" key="(\?|&amp;)(wd|word|kw)=(.+?)(&amp;|$)" keypos="3" encode="ie=(.*?)(&amp;|$)" defenc="gbk"></patten>
+                </baidu>
+                <sogou no="2">
+                        <patten no="1" url="sogou\.com(:80)?\/" src_id="64" name="搜狗" key="(\?|&amp;)query=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)" defenc="gbk"></patten>
+                </sogou>
+                <google no="3">
+                        <patten no="1" url="(www|video|news|images|blogsearch|shenghuo|ditu|maps|groups|translate|picasaweb|ipv6)\.google\.(cn|ro|gr|ci|nl|no|mv|jo|de|az|ee|ge|ch|gy|tt|ba|lk|lu|bs|mn|ws|fr|cl|it|md|lt|hu|se|si|kg|ki|ad|bg|hn|dm|rs|cd|ae|at|ru|de|ie|es|pt|dk|pl|ca|lv|at|be|sk|cz|mu|de|fi|hr|is)(:80)?\/" src_id="65" name="谷歌" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)"></patten>
+                        <patten no="2" url="(www|video|news|images|blogsearch|shenghuo|ditu|maps|groups|translate|picasaweb|ipv6)\.google\.com(\.(tw|sg|hk|kh|my|fj|kw|ar|ua|om|ni|ng|gh|cu|ph|bd|bz|pk|bh|br|eg|np|py|vn|mx|gi|tr|sv|ai|qa|au|lb|mt|gt|ec|bn|uy|bo|pr|jm|co|sa|ly|pe|do|by))?(:80)?\/" src_id="65" name="谷歌" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2"></patten>
+                        <patten no="3" url="(www|video|news|images|blogsearch|shenghuo|ditu|maps|groups|translate|picasaweb|ipv6)\.google\.co\.(uk|th|il|ma|in|vi|jp|id|kr|ke|mz|zw|za|ve|nz|cr)(:80)?\/" src_id="65" name="谷歌" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)"></patten>
+                </google>
+                <youdao no="4">
+                        <patten no="1" url="youdao\.com(:80)?\/" src_id="69" name="有道" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2" encode="ue=(.*?)(&amp;|$)"></patten>
+                </youdao>
+                <so360 no="13">
+                        <patten no="1" url="\.(so|qihoo)\.com(:80)?\/" src_id="111" name="360搜索" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2" encode="ue=(.*?)(&amp;|$)"></patten>
+                </so360>
+                <yahoo no="5">
+                        <patten no="1" url="(search|search2|myweb|sitemap|business|one|music)\.cn\.yahoo\.com(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                        <patten no="2" url="www\.yahoo\.cn(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                        <patten no="3" url="search\.yahoo\.co\.jp(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                        <patten no="4" url="((tw|hk)\.)?(search|shopping|answers)\.yahoo\.com(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                        <patten no="5" url="video\.search\.yahoo\.com(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                        <patten no="6" url="new\.m\.yahoo\.com(:80)?\/" src_id="62" name="雅虎" key="(\?|&amp;)p=(.+?)(&amp;|$)" keypos="2" encode="ei=(.*?)(&amp;|$)"></patten>
+                </yahoo>
+                <bing no="6">
+                        <patten no="1" url="(www|cn|wap)\.bing\.com(:80)?\/" src_id="66" name="必应" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)"></patten>
+                </bing>
+                <aol no="7">
+                        <patten no="1" url="aol\.co\.uk(:80)?\/" src_id="67" name="aol" key="(\?|&amp;)(q|query)=(.+?)(&amp;|$)" keypos="3"></patten>
+                        <patten no="2" url="aol\.(de|fr|hk|tw)(:80)?\/" src_id="67" name="aol" key="(\?|&amp;)(q|query)=(.+?)(&amp;|$)" keypos="3"></patten>
+                        <patten no="3" url="aol\.com(\.au)?(:80)?\/" src_id="67" name="aol" key="(\?|&amp;)(q|query)=(.+?)(&amp;|$)" keypos="3"></patten>
+                </aol>
+                <ok365 no="8">
+                        <patten no="1" url="ok365\.com(:80)?\/search" src_id="68" name="ok365" key="(\?|&amp;)k=(.+?)(&amp;|$)" keypos="2" defenc="gbk"></patten>
+                        <patten no="2" url="ok365\.com(:80)?\/" src_id="68" name="ok365" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2"></patten>
+                </ok365>
+                <iask no="9">
+                        <patten no="1" url="iask\.com(:80)?\/" src_id="70" name="爱问" key="(\?|&amp;)k=(.+?)(&amp;|$)" keypos="2" defenc="gbk"></patten>
+                </iask>
+                <ask no="10">
+                        <patten no="1" url="ask\.com(:80)?\/" src_id="71" name="ask" key="(\?|&amp;)q=(.+?)(&amp;|$)" keypos="2"></patten>
+                </ask>
+                <soso no="11">
+                        <patten no="2" url="video\.soso\.com(:80)?\/" src_id="72" name="搜搜" key="(\?|&amp;)w=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)"></patten>
+                        <patten no="1" url="soso\.com(:80)?\/" src_id="72" name="搜搜" key="(\?|&amp;)w=(.+?)(&amp;|$)" keypos="2" encode="ie=(.*?)(&amp;|$)" defenc="gbk"></patten>
+                </soso>
+                <a114 no="12">
+                        <patten no="1" url="118114\.cn(:80)?\/" src_id="73" name="114" key="(\?|&amp;)kw=(.+?)(&amp;|$)" keypos="2" encode="ec=(.*?)(&amp;|$)" defenc="gbk"></patten>
+                </a114>
+        </search>
+        <zhanwai no="8" src_id="60">
+                <unknown no="1">
+                        <patten no="1" url=".*" src_id="74" name="其他" host="1"></patten>
+                </unknown>
+        </zhanwai>
+</xmlconf>

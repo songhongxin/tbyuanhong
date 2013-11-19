@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogProcessor class="com.etao.lz.star.bolt.BusinessFillProcessor">
+	<Output>is_new_generated,is_pay</Output>
+	</LogProcessor>
+</BoltConfig>

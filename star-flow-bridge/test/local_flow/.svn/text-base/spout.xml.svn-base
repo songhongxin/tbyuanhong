@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<SpoutConfig>
+	<LogGenerator class="com.etao.lz.star.spout.APlusFileLogGenerator" name="tt_flow_spout">
+		<Configuration>
+			<Attribute name="input_path" value="/local_flow/aplus.data" />
+			<Attribute name="log_builder" value="com.etao.lz.star.spout.APlusLogBuilder" />
+			<Attribute name="log_class" value="flow" />
+			<Attribute name="tt_tag" value="aplus" />
+			<Attribute name="single_proto" value="false" />
+			<Attribute name="emit_check_period" value = "0"/>
+		</Configuration>
+
+		<LogMapping name="aplus">
+			<Mapping name="log_version" value="@int 2"/>
+			<Mapping name="log_src" value = "aplus"/>
+			<Mapping name="dest_type" value = "browse"/>
+			<Mapping name="uid" value = "@aplus_bytes uid"/>
+			<Mapping name="url" value = "@aplus_bytes url"/>
+			<Mapping name="sid" value = "@aplus_bytes sid"/>
+			<Mapping name="mid" value = "@aplus_bytes cna"/>
+			<Mapping name="refer_url" value = "@aplus_bytes pre"/>
+		</LogMapping>
+	</LogGenerator>
+</SpoutConfig>

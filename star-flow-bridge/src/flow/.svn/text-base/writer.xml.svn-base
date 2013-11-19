@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<BoltConfig>
+	<LogOutput class="com.etao.lz.star.output.LimitMemoryLogOutput">
+	<Configuration>
+		<!-- LimitMemoryLogOutput related -->
+		<Attribute name="limitmemory_target" value="com.etao.lz.star.output.MultiThreadLogOutput" />
+		<Attribute name="ignore_count" value="10000000"/>
+		<Attribute name="memory_limit" value="8388608"/>
+		<Attribute name="mem_check_interval" value="30000" />
+
+		<!-- MultiThreadLogOutput related -->
+		<Attribute name="output_threads" value="2" />
+		<Attribute name="queue_size" value="10000" />
+		<Attribute name="multithread_target" value="com.etao.lz.star.output.WriteToHBaseProcessor" />
+					
+		<!-- WriteToHBaseProcessor related -->
+		<Attribute name="HbasePort" value="3325"/>
+		<Attribute name="Zookeepercluster" value="my161205.cm6,my161206.cm6,my161207.cm6,my161208.cm6,my161209.cm6"/>
+		<Attribute name="timeToLive" value="432000"/>
+		<Attribute name="writeBufferSize" value="5242880"/>
+		<Attribute name="refresh_queue_interval" value="5000" />
+		
+		<Attribute name="output_tables" value="browse_log,lz_etui_b2c_aplus_log" />	
+		<Attribute name="browse_log_input" value="browse,com.etao.lz.star.output.hbase.FlowRowKeyBuilder" />
+		<Attribute name="lz_etui_b2c_aplus_log_input" value="aplus_b2c,com.etao.lz.star.output.hbase.FlowRowKeyBuilder" />
+	
+	</Configuration>
+	</LogOutput>
+	
+	<LogOutput class="com.etao.lz.star.output.BroadcastLogOutput"/>
+	
+</BoltConfig>

@@ -1,0 +1,268 @@
+<?xml version="1.0" ?>
+<project name="star-flow-bridge" default="deploy">
+	<path id="emma.lib">
+		<pathelement location="lib/emma.jar" />
+		<pathelement location="lib/emma_ant.jar" />
+	</path>
+	<path id="common.lib">
+		<pathelement location="lib/json-simple-1.1.1.jar" />
+		<pathelement location="lib/protobuf-java-2.4.1.jar" />
+		<pathelement location="lib/storm-0.8.1.jar" />
+		<pathelement location="lib/commons-codec-1.4.jar" />
+		<pathelement location="lib/clojure-1.4.0.jar" />
+		<pathelement location="lib/timetunnel-idl.jar" />
+		<pathelement location="lib/timetunnel-client.jar" />
+		<pathelement location="lib/message-parser.jar" />
+		<pathelement location="lib/commons-logging-1.1.1.jar" />
+		<pathelement location="lib/commons-io-2.4.jar" />
+		<pathelement location="lib/commons-jexl-2.1.1.jar" />
+		<pathelement location="lib/commons-cli-1.2.jar" />
+		<pathelement location="lib/log4j-1.2.16.jar" />
+		<pathelement location="lib/libthrift.jar" />
+		<pathelement location="lib/libthrift7-0.7.0.jar" />
+		<pathelement location="lib/hbase/hbase-0.94-adh3u0.jar" />
+		<pathelement location="lib/hbase/guava-r09-jarjar.jar" />
+		<pathelement location="lib/hbase/hadoop-core-0.20.2-cdh3u3.jar" />
+		<pathelement location="lib/guava-10.0.1.jar" />
+		<pathelement location="lib/zookeeper-3.3.3.jar" />
+		<pathelement location="lib/curator-client-1.0.1.jar" />
+		<pathelement location="lib/curator-framework-1.0.1.jar" />
+		<pathelement location="lib/slf4j-api-1.5.8.jar" />
+		<pathelement location="lib/slf4j-log4j12-1.5.8.jar" />
+		<pathelement location="lib/jzmq-2.1.0.jar" />
+		<pathelement location="lib/jdom-1.1.1.jar" />
+		<pathelement location="lib/mina-core-1.1.5.jar" />
+		<pathelement location="lib/jstaf-3.3.2.jar" />
+		<pathelement location="lib/stream-2.1.1.jar" />
+		<pathelement location="lib/trove4j-3.0.3.jar" />
+		<pathelement location="lib/tair-client-2.3.4.38.jar" />
+		<pathelement location="lib/tair-mc-client-1.0.4.9.jar" />
+		<pathelement location="lib/mysql-connector-java-5.1.25.jar" />
+		<pathelement location="lib/diamond-group-client-1.0.1.3.jar" />
+		<pathelement location="lib/diamond-client-3.6.5.jar" />
+		<pathelement location="lib/diamond-utils-3.1.2.jar" />
+		<pathelement location="lib/jackson-core-asl-1.9.12.jar" />
+		<pathelement location="lib/json-lib-2.4-jdk15.jar" />
+		<pathelement location="lib/ezmorph-1.0.6.jar" />
+		<pathelement location="lib/eagleeye-core-1.2.4.jar" />
+		<pathelement location="lib/commons-collections-3.2.1.jar" />
+	</path>
+	<path id="build.lib">
+		<path refid="common.lib" />
+		<pathelement location="lib/hbase/hbase-0.94-adh3u0.jar" />
+		<pathelement location="lib/hbase/guava-r09-jarjar.jar" />
+		<pathelement location="lib/hbase/hadoop-core-0.20.2-cdh3u3.jar" />
+	</path>
+	<path id="test.lib">
+		<path refid="common.lib" />
+		<pathelement location="lib/kryo-2.17.jar" />
+		<pathelement location="lib/disruptor-2.10.1.jar" />
+		<pathelement location="lib/hbase-test/hbase-0.94.0.jar" />
+		<pathelement location="lib/hbase-test/hadoop-core-1.0.2.jar" />
+		<pathelement location="lib/junit-4.10.jar" />
+		<pathelement location="lib/easymock-3.1.jar" />
+		<pathelement location="lib/commons-lang-2.5.jar" />
+		<pathelement location="lib/commons-exec-1.1.jar" />
+		<pathelement location="lib/commons-codec-1.4.jar" />
+		<pathelement location="lib/objenesis-1.2.jar" />
+		<pathelement location="lib/cglib-nodep-2.2.jar" />
+		<pathelement location="lib/snakeyaml-1.9.jar" />
+		<pathelement location="lib/carbonite-1.5.0.jar" />
+		<pathelement location="lib/minlog-1.2.jar" />
+		<pathelement location="lib/cglib-nodep-2.2.jar" />
+	</path>
+	<taskdef resource="emma_ant.properties" classpathref="emma.lib" />
+	<target name="init">
+		<delete dir="classes" />
+		<mkdir dir="classes" />
+	</target>
+	<target name="compile" depends="init">
+<!--
+		<exec executable="bin/protoc">
+			<env key="LD_LIBRARY_PATH" path="proto_lib" />
+			<arg line="-I=src -java_out=src src/starlog.proto" />
+		</exec>
+		<exec executable="bin/protoc">
+			<env key="LD_LIBRARY_PATH" path="proto_lib" />
+			<arg line="-I=src -java_out=src src/aplus.proto" />  少个-
+		</exec>
+-->
+		<copy todir="classes">
+			<fileset dir="src">
+				<include name="*.xml" />
+				<include name="*/*.xml" />
+				<include name="*/*.data" />
+				<include name="*.txt" />
+			</fileset>
+		</copy>
+		<javac srcdir="src" destdir="classes" debug="true" debuglevel="source,lines,vars" includeantruntime="on">
+			<classpath refid="build.lib" />
+		</javac>
+	</target>
+	<target name="test" depends="compile">
+		<javac srcdir="test" destdir="classes" debug="true" debuglevel="source,lines,vars" includeantruntime="on">
+			<classpath refid="test.lib" />
+		</javac>
+		<copy todir="classes">
+			<fileset dir="test">
+				<include name="*.xml" />
+				<include name="*/*.xml" />
+				<include name="*.data" />
+				<include name="*/*.data" />
+			</fileset>
+		</copy>
+		<delete dir="coverage" />
+		<mkdir dir="coverage" />
+		<emma enabled="true">
+			<instr instrpath="classes" destdir="coverage" metadatafile="coverage/metadata.emma" merge="true">
+			</instr>
+		</emma>
+		<copy todir="coverage">
+			<fileset dir="classes">
+				<exclude name="**/*.java" />
+			</fileset>
+			<fileset dir="src">
+				<include name="log4j.properties" />
+			</fileset>
+		</copy>
+		<junit printsummary="true" haltonfailure="yes">
+			<jvmarg value="-Demma.coverage.out.file=coverage/metadata.emma" />
+			<jvmarg value="-Demma.coverage.out.merge=true" />
+			<classpath>
+				<pathelement path="coverage" />
+				<path refid="test.lib" />
+				<path refid="emma.lib" />
+			</classpath>
+			<batchtest fork="yes" todir="coverage">
+				<formatter type="plain" usefile="true" />
+				<fileset dir="test">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<delete dir="coverage_html" />
+		<mkdir dir="coverage_html" />
+		<emma enabled="true">
+			<report sourcepath="src" encoding="utf-8" 
+				sort="+block,+name,+method,+class" 
+				metrics="method:70,block:80,line:80,class:100">
+				<fileset dir="coverage">
+					<include name="*.emma" />
+				</fileset>
+				<html outfile="coverage_html/coverage.html" depth="method" columns="name,class,method,block,line" />
+			</report>
+		</emma>
+	</target>
+	<target name="plugin" depends="compile">
+		<jar destfile="tools/plugin/star-plugin-example.jar">
+				<fileset dir="classes">
+					<filename name="com/etao/lz/star/plugin/example/*.class"/>
+				</fileset>
+				<fileset file="src/com/etao/lz/star/plugin/example/*.xml" />
+		</jar>
+	</target>
+	<target name="tools" depends="compile">
+		<delete>
+			<fileset dir="." includes="tools/*.jar" />
+		</delete>
+		<jar destfile="tools/tt_recv.jar">
+			<fileset dir="classes" excludes="*/*.data,*.txt,*.properties" />
+			<zipfileset excludes="META-INF/**" src="lib/libthrift.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/libthrift7-0.7.0.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/protobuf-java-2.4.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-pool-1.6.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-logging-1.1.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/log4j-1.2.16.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-cli-1.2.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-pool-1.6.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-lang-2.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-api-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-log4j12-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/timetunnel-idl.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/timetunnel-client.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/message-parser.jar" />
+		</jar>
+		<jar destfile="tools/hbase-table.jar">
+			<manifest>
+				<attribute name="Main-Class" value="com.etao.lz.star.HBaseTable" />
+			</manifest>
+			<fileset dir="classes" excludes="*/*.data,*.txt" />
+			<fileset file="src/hbase.properties" />
+			<zipfileset excludes="META-INF/**" src="lib/curator-client-1.0.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/curator-framework-1.0.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/jetty-6.1.26.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/jetty-util-6.1.26.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/servlet-api-2.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/protobuf-java-2.4.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/guava-10.0.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/hbase-0.94-adh3u0.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/guava-r09-jarjar.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/hadoop-core-0.20.2-cdh3u3.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/zookeeper-3.4.3.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-logging-1.1.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/log4j-1.2.16.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-cli-1.2.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-lang-2.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-api-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-log4j12-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-codec-1.4.jar" />
+		</jar>
+		<jar destfile="lib/subscriber.jar">
+			<fileset dir="classes" includes="com/etao/lz/star/*,com/etao/lz/star/spout/*" />
+			<fileset dir="classes" includes="com/etao/lz/star/*,com/etao/lz/star/output/*" />
+			<fileset dir="classes" includes="com/etao/lz/star/*,com/etao/lz/star/output/broadcast/*" />
+			<fileset dir="classes" includes="com/etao/lz/star/*,com/etao/lz/star/monitor/*" />
+			<fileset dir="classes" includes="com/etao/lz/star/*,com/etao/lz/star/*" />
+			<fileset file="tools/std.properties" />
+		</jar>
+	</target>
+	<target name="deploy" depends="compile">
+		<delete>
+			<fileset dir="." includes="star-storm-bridge.jar" />
+		</delete>
+		<jar destfile="star-storm-bridge.jar">
+			<manifest>
+				<attribute name="Main-Class" value="com.etao.lz.star.StarMain" />
+			</manifest>
+			<fileset dir="classes" excludes="*/*.data" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-logging-1.1.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/log4j-1.2.16.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/protobuf-java-2.4.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-pool-1.6.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-lang-2.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/libthrift.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/libthrift7-0.7.0.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/timetunnel-client.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/timetunnel-idl.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/message-parser.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-api-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/slf4j-log4j12-1.5.8.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/guava-10.0.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/guava-r09-jarjar.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/hbase-0.94-adh3u0.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/hbase/hadoop-core-0.20.2-cdh3u3.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-jexl-2.1.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/mina-core-1.1.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/jstaf-3.3.2.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/stream-2.1.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/trove4j-3.0.3.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/tair-client-2.3.4.38.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/tair-mc-client-1.0.4.9.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/mysql-connector-java-5.1.25.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/diamond-group-client-1.0.1.3.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/diamond-client-3.6.5.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/diamond-utils-3.1.2.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/jackson-core-asl-1.9.12.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/json-lib-2.4-jdk15.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/ezmorph-1.0.6.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/eagleeye-core-1.2.4.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-collections-3.2.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/commons-beanutils-1.7.0.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/common-smonitor-1.0.4.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/common-monitor-1.2.1.jar" />
+			<zipfileset excludes="META-INF/**" src="lib/jdom-1.1.1.jar" />
+		
+		</jar>
+	</target>
+</project>
+

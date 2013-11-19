@@ -1,0 +1,21 @@
+
+moniter_supervisor.sh:
+monitor supervisor. should be run on any sueprvisor host. added to crontab with user admin!
+
+moniter_nimbus.sh 
+monitor nimbus. should ONLY be run on nimbus host. added to crontab with user admin!
+
+monitor_storm_mem.py
+monitor storm worker's memory usage, if > 6G, wangwang alert, if > 10G, killed.
+This script is copied to /home/admin/star_storm and add to crontab:
+* * * * * /usr/bin/python /home/admin/star_storm/monitor_storm_mem.py
+
+monitor_storm_log.py
+monitor storm worker's log, if error level log is found,wangwang alert.
+This script is copied to /home/admin/star_storm and add to crontab:
+*/5 * * * * /usr/bin/python /home/admin/star_storm/monitor_storm_log.py
+
+ping.py
+monitor whether storm host machine is alive. it must be deployed other than storm cluster machine(currently gateway066055.cm3).
+This script is registered to crontab
+*/5 * * * * /usr/bin/python /home/guoxiang.lgx/ping.py

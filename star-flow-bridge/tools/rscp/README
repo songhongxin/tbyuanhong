@@ -1,0 +1,16 @@
+
+a cluster  form cluster dispatch data 
+the destination servers are listed in file "servers"
+
+usage:
+rcsp.sh
+
+output: 
+the commands list in file "commands" will be exec on each server. password and some normal interactivations will
+be done automatically.
+
+cautions:
+this tool shoule be run using your native account. (don't sudo)
+
+required:
+"tcl/expect" package

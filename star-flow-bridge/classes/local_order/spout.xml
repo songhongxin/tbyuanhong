@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<SpoutConfig>
+	<LogGenerator class="com.etao.lz.star.spout.FileLogGenerator" name="tt_order_spout">
+		<Configuration>
+			<Attribute name="input_path" value="/local_order/order.data" />
+			<Attribute name="log_builder" value="com.etao.lz.star.spout.MySQLLogBuilder"/>
+			<Attribute name="log_class" value="business" />
+			<Attribute name="seperators" value="2,1" />
+			<Attribute name="tt_tag" value="order" />
+			<Attribute name="emit_check_period" value = "0"/>
+		</Configuration>
+		 <LogMapping name="order">
+			<Mapping name="log_version" value="@int 2"/>
+			<Mapping name="log_src" value = "order_0000"/>
+			<Mapping name="dest_type" value = "alipay_rtn_order"/>
+			<Mapping name="seller_id" value ="@field2 6 33"/>
+			<Mapping name="buyer_id" value="@field2 6 35"/>
+			<Mapping name="auction_price" value = "@price_cent @field2 6 38"/>
+			<Mapping name="actual_total_fee" value ="@price_cent @field2 6 14"/>
+			<Mapping name="gmt_create" value="@field2 6 8"/>
+			<Mapping name="gmt_modified" value="@field2 6 9"/>
+			<Mapping name="trade_no" value="@field2 6 2"/>
+			<Mapping name="trade_status" value="@field2 6 7"/>
+			<Mapping name="trade_track_info" value="@field2 6 47"/>
+		</LogMapping>
+		 		
+	</LogGenerator>
+</SpoutConfig>

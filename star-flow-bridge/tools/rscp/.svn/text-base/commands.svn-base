@@ -1,0 +1,9 @@
+
+#sudo -u admin /home/admin/storm/bin/storm supervisor&
+#sleep 10
+
+
+
+
+
+

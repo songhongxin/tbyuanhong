@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<xmlconf>
+        <taobao no="1">
+                <search_page no="1" type="1">
+                        <patten no="1" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?search=y.*keyword=([^&amp;]+)?&amp;price1=(\d+)?&amp;price2=(\d+)?$" keypos="3" sppos="4" eppos="5" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="2" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?(search=y&amp;)?.*price1=(\d+)?&amp;price2=(\d+)?.*&amp;keyword=([^&amp;]+)?.*$" keypos="6" sppos="4" eppos="5" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="3" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?userid=(\w+)?&amp;.*search=y&amp;keyword=([^&amp;]+)?&amp;price1=(\d+)?&amp;price2=(\d+)?$" keypos="4" sppos="5" eppos="6" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="4" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?.*searchword=([^&amp;]+)?&amp;price1=(\d+)?&amp;price2=(\d+)?$" keypos="3" sppos="4" eppos="5" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="5" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?.*price1=(\d+)?&amp;price2=(\d+)?&amp;searchword=([^&amp;]+)?.*$" keypos="5" sppos="3" eppos="4" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="6" url="^http:\/\/(msn\.)?shop\.tmall\.com(:80)?\/search-(\d+)?-\d+----\d+--\d+\.htm\?.*key=([^&amp;]+)?(&amp;startprice=(\d+)?)?(&amp;endprice=(\d+)?)?$" keypos="4" sppos="6" eppos="8" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="7" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/.*\?.*keyword=([^&amp;]+)?(&amp;price1=(\d+)?)?(&amp;price2=(\d+)?)?.*$" keypos="3" sppos="5" eppos="7" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="8" url="^http:\/\/(msn\.)?\w+\.tmall\.com(:80)?\/\?condition=keyword=([^&amp;]+)?.*&amp;price2=(\d+)?&amp;price1=(\d+)?.*$" keypos="3" sppos="5" eppos="4" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="9" url="^http:\/\/(msn\.)?\w+\.tmall\.com(:80)?\/\?condition=keyword=([^&amp;]+)?.*$" keypos="3" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="10" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?condition=keyword=([^&amp;]+)?&amp;viewtype.*$" keypos="3" keyname="dp_search" titlename="店内搜索页"></patten>
+                        <patten no="11" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/(show_list|wui_page)\.htm\?.*price1=(\d+)?&amp;price2=(\d+)?&amp;.*keyword=([^&amp;]+)?.*$" keypos="6" sppos="4" eppos="5" keyname="dp_search" titlename="店内搜索页"></patten>
+                        
+			<patten no="12" url="^http:\/\/item\.hitao\.com(:80)?\/shop\/shop_search\.htm\?shopId=(\d+)?&amp;sortType=(.*)&amp;showStyle=(.*)&amp;keyWord=(.*)&amp;price1=(\d+)?&amp;price2=(\d+)?" keypos="5" sppos="6" eppos="7" keyname="dp_search" titlename="店内搜索页"></patten>
+			<patten no="13" url="^http:\/\/(\w+)\.taobao\.com(:80)?\/\?userId=(\d+)?&amp;shopId=(\d+)?&amp;view_type=(.*?)&amp;order_type=(.*?)&amp;search=y&amp;keyword=([^&amp;]+)?&amp;price1=(\d+)?&amp;price2=(\d+)?" keypos="7" sppos="8" eppos="9" keyname="dp_search" titlename="店内搜索页"></patten>
+			<patten no="14" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/search\.htm\?(.*?)&amp;keyword=([^&amp;]+)?&amp;price1=(\d+)?&amp;price2=(\d+)?" keypos="5" sppos="6" eppos="7" keyname="dp_search" titlename="店内搜索页"></patten>
+			<patten no="15" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/search\.htm\?(.*?)(&amp;price1=(\d+)?)?(&amp;price2=(\d+)?)?&amp;keyword=([^&amp;]+)?" keypos="9" sppos="6" eppos="8" keyname="dp_search" titlename="店内搜索页"></patten>
+		</search_page>
+                <category_page no="2" type="2">
+                        <patten no="1" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+-(\d+)-.+\.htm.*$" keypos="3"></patten>
+                        <patten no="2" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/xshop\/show_list-cat-\d+-(\d+)-.+\.htm$" keypos="2"></patten>
+                        <patten no="3" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?scid=(\d+).*categoryname=([^&amp;#]+).*$" keypos="3" titlepos="4"></patten>
+			            <patten no="4" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/search\.htm\?.*scid=(\d+).*scname=([^&amp;#]+)" keypos="4" titlepos="5"></patten>
+			            <patten no="5" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/\?search=y.*scid=(\d+).*scname=([^&amp;#]+)" keypos="4" titlepos="5"></patten>
+                        <patten no="6" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?(pagenum=\d+&amp;)?.*querytype=(new|end).*$" keypos="4" ></patten>
+                        <patten no="7" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/show_list\.htm\?.*scid=(\d+)&amp;scname=([^&amp;#]+)(&amp;.*)?$" keypos="3" titlepos="4"></patten>
+                        <patten no="8" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/wui_page\.htm\?.*scid=(\d+)&amp;scname=([^&amp;#]+).*$" keypos="3" titlepos="4"></patten>
+                        <patten no="9" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/view_shop\.htm\?.*scid=(\d+).*scname=([^&amp;#]+).*$" keypos="3" titlepos="4"></patten>
+                        <patten no="10" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+-(\d+)-.+\.htm.*$" keypos="3"></patten>
+                        <patten no="11" url="^http:\/\/(shop\d+|[\w-]+)\.(mall\.)?taobao\.com(:80)?\/search-cat-\d+-(\d+)-" keypos="4"></patten>
+                        <patten no="12" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/search-(\d+)(-(\d+)?----\d+-(grid)?-\d+)?\.htm.*$" keypos="3"></patten>
+                        <patten no="13" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+-(\d+)-.*$" keypos="3"></patten>
+                        <patten no="14" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/\?scid=(\d+).*categoryname=([^&amp;#]+).*$" keypos="3" titlepos="4"></patten>
+                        <patten no="15" url="^http:\/\/(shop\d+|[\w-]+)\.tmall\.com(:80)?\/search-cat-\d+-(\d+)-" keypos="3"></patten>
+			<patten no="16" url="^http:\/\/item\.hitao\.com(:80)?\/shop\/shop_search\.htm\?shopId=(\d+)?([&amp;]+)scid=(\d+)&amp;catgoryName=([^&amp;#]+)" keypos="3" titlepos="4"></patten>
+                	<patten no="17" url="^http:\/\/(\w+)\.taobao\.com(:80)?\/\?search=y&amp;scid=(\d+)&amp;scname=([^&amp;]+)&amp;checkedRange=(\w+)&amp;queryType=(\w+)" keypos="3" titlepos="4"></patten>
+			<patten no="18" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/.*scid=(\d+).*$" keypos="4"></patten>
+			<patten no="19" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/category-(\d+)\.htm\?.*catname=([^&amp;#]+).*$" keypos="3" titlepos="4"></patten>
+		</category_page>
+                <allproduct_page no="3" type="3">
+                        <patten no="1" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+\.htm.*$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="2" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/xshop\/show_list-cat-\d+\.htm$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="3" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/xshop\/wui_page\.htm\?(cmspage_id=(null)?&amp;user_id=\w+&amp;search=y|.*&amp;scid=&amp;scname=.*&amp;keyword=?|shop_id=(\d+|null)&amp;user_id=(null|\w+)&amp;search=y.*|.*&amp;search=y&amp;userid=\w+&amp;.*|shop_id=\d+&amp;search=y.*)$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="4" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/xshop\/show_list\.htm\?(.*scid=&amp;scname=&amp;.*&amp;keyword=?|owner_id=\w+&amp;shop_id=\d+.*)$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="5" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?.*((scid|catid)=null|searchword=&amp;).*$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="6" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/shop\/xshop\/wui_page\.htm\?.*search=y.*$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="7" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+\.htm$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="8" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?.*search=y.*$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="9" url="^http:\/\/(shop\d+|[\w-]+)\.(mall\.)?taobao\.com(:80)?\/search-cat-\d+\.htm" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="10" url="^http:\/\/(msn\.)?shop\.tmall\.com(:80)?\/search--\d?--(\d+)?-(\d+)?-\d+-(grid)?-\d+\.htm$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="11" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/shop\/xshop\/wui_page-cat-\d+\.htm.*$" keyname="all" titlename="所有宝贝"></patten>
+                        <patten no="12" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/(shop\/view_?shop\.htm)?\?.*search=y.*$" keyname="all" titlename="所有宝贝"></patten>
+			<patten no="13" url="^http:\/\/(shop\d+|[\w-]+)\.tmall\.com(:80)?\/search-cat-\d+\.htm" keyname="all" titlename="所有宝贝"></patten>
+                        
+			<patten no="14" url="^http:\/\/item\.hitao\.com(:80)?\/shop\/shop_search\.htm\?shopId=(\d+)&amp;sortType=_hotsell$" keyname="all" titlename="所有宝贝"></patten>
+			<patten no="15" url="^http:\/\/(\w+)\.taobao\.com(:80)?\/\?(orderType=.*&amp;)?search=y" keyname="all" titlename="所有宝贝"></patten>
+			<patten no="16" url="^http:\/\/([\w-]+)\.(taobao|tmall)\.com(:80)?\/search\.htm.*" keyname="all" titlename="所有宝贝"></patten>
+                </allproduct_page>
+                <product_page no="4" type="4">
+                        <patten no="1" url="^http:\/\/(edyna\.)?(archive|auction1|item)\.(lp\.)?taobao\.com(:80)?\/\/?(auction\/)?item_detail-(\d*db\w+|null|\w+|\d+)?-(\w+)\.(jhtml|htm).*$" keypos="7"></patten>
+                        <patten no="2" url="^http:\/\/(edyna\.)?(item|auction1)\.(lp\.)?taobao\.com(:80)?\/\/?(auction\/)?(item_detail|itemdetail)\.(htm|jhtml)\?.*(item_id|itemid)=([^&amp;]+).*$" keypos="9"></patten>
+                        <patten no="3" url="^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/item\.htm\?id=(\d+)&amp;.+ali_trackid=2:.+$" keypos="3"></patten>
+                        <patten no="4" url="^http:\/\/(msn\.)?item\.(lp\.)?taobao\.com(:80)?\/auction\/item_detail\.htm\?item_num_id=(\d+)$" keypos="4"></patten>
+                        <patten no="5" url="^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/spu-(\d+).*$" keypos="3"></patten>
+                        <patten no="6" url="^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/spu_detail\.htm\?spu_id=(\d+)$" keypos="3"></patten>
+                        <patten no="7" url="^http:\/\/item\.(lp\.)?taobao\.com(:80)?\/(auction\/)?item_detail\.(htm|jhtml)\?.*item_num_id=(\d+).*$" keypos="5"></patten>
+                        <patten no="8" url="^http:\/\/(edyna\.)?item\.(lp\.|beta\.)?taobao\.com(:80)?\/item\.htm\?(.+&amp;)?id=(\d+)(&amp;|#|$)" keypos="5"></patten>
+                        <patten no="9" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/(item|product)-(\d+)(-{1,3}\d+)?\.htm.*$" keypos="4"></patten>
+                        <patten no="10" url="^http:\/\/(item|detail)\.tmall\.com(:80)?\/.*(&amp;|\?)(item_num_id|id)=(\d+)(&amp;|$)" keypos="5"></patten>
+                        <patten no="11" url="^http:\/\/(item|spu|detail)\.tmall\.com(:80)?\/spu-(\d+)-(\d+)(\.|-)" keypos="4"></patten>
+                        
+			<patten no="12" url="^http:\/\/item\.hitao\.com(:80)?\/item-(\d+)\.htm$" keypos="2"></patten>
+			<patten no="13" url="^http:\/\/item\.lp\.taobao\.com(:80)?\/item\.htm\?(item_id|id)=(\w+)" keypos="3"></patten>
+			<patten no="14" url="^http:\/\/item\.wmlp\.com(:80)?\/item\.htm\?(item_id|id)=(\w+)" keypos="3"></patten>
+                        <patten no="15" url="^http:\/\/kezhan\.trip\.taobao\.com(:80)?\/item\.htm\?(.+&amp;)?item_id=(\d+)(&amp;|$)" keypos="3"></patten>
+                        <patten no="16" url="^http:\/\/detail\.(taobao|tmall)\.com(:80)?\/item\.htm\?(.+&amp;)?(item_id|id)=(\d+)(&amp;|$)" keypos="5"></patten>
+                        <patten no="17" url="^http:\/\/(spu|detail)\.(taobao|tmall)\.com(:80)?\/([\w-]+\/)?spu_detail\.htm\?(.+&amp;)?default_item_id=(\d+)(&amp;|$)" keypos="6"></patten>
+                        <patten no="18" url="^http:\/\/(spu|detail)\.(taobao|tmall)\.com(:80)?\/([\w-]+\/)?spu_detail\.htm\?(.+&amp;)?mallstitemid=(\d+)(&amp;|$)" keypos="6"></patten>
+                        <patten no="19" url="^http:\/\/wt\.taobao\.com(:80)?\/detail\.htm\?(.+&amp;)?id=(\d+)(&amp;|$)" keypos="3"></patten>
+                        <patten no="20" url="^http:\/\/(meal|house)\.taobao\.com(:80)?\/item\.htm\?(.+&amp;)?id=(\d+)(&amp;|$)" keypos="4"></patten>
+                        <patten no="21" url="^http:\/\/detail\.tmall\.hk(:80)?\/.*item\.htm\?(.+&amp;)?id=(\d+)(&amp;|$)" keypos="3"></patten>
+		</product_page>
+                <tag_page no="5" type="5">
+                        <patten no="1" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/shop\/xshop\/wui_page-(\d+)\.htm.*$" keypos="3"></patten>
+                        <patten no="2" url="^http:\/\/[\w-]+\.mall\.taobao\.com(:80)?\/shop\/xshop\/wui_page-(\d+)\.htm.*$" keypos="2"></patten>
+                        <patten no="3" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/shop\/xshop\/shop_intro\.htm$" keyname="intro" titlename="店铺介绍"></patten>
+                        <patten no="4" url="^http:\/\/(msn\.)?(shop\d+|[\w-]+)\.(mall\.)?taobao\.com(:80)?\/view_page-(\d+)\.htm" keypos="5"></patten>
+                        <patten no="5" url="^http:\/\/[\w-]+\.tmall\.com(:80)?\/shop\/xshop\/wui_page-(\d+)\.htm.*$" keypos="2"></patten>
+                        <patten no="6" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/grade-{1,2}(\d+)\.htm.*$" keypos="3"></patten>
+                        <patten no="7" url="^http:\/\/(msn\.)?\w+\.tmall\.com(:80)?\/service\.htm.*$" keyname="service"></patten>
+                        <patten no="8" url="^http:\/\/(msn\.)?(shop\d+|[\w-]+)\.tmall\.com(:80)?\/view_page-(\d+)\.htm" keypos="4"></patten>
+                </tag_page>
+                <comm_page no="6" type="6">
+                        <patten no="1" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/bbs\/forum\.htm.*$" keyname="comm" titlename="交流区"></patten>
+                        <patten no="2" url="^http:\/\/shop\.tmall\.com(:80)?\/bbs\/thread-(\d+)\.htm$" keyname="comm" titlename="交流区"></patten>
+                        <patten no="3" url="^http:\/\/[\w-]+\.tmall\.com(:80)?\/bbs\/forum\.htm.*$" keyname="comm" titlename="交流区"></patten>
+                        <patten no="4" url="^http:\/\/shop\.tmall\.com(:80)?\/bbs\/forum-(\d+)\.htm$" keyname="comm" titlename="交流区"></patten>
+                        <patten no="5" url="^http:\/\/(\w+)\.taobao\.com(:80)?\/view_page-(\d+)\.htm" keyname="comm" titlename="交流区"></patten>
+		</comm_page>
+                <first_page no="7" type="7">
+                        <patten no="1" url="^http:\/\/(edyna\.)?store\.taobao\.com(:80)?\/\/?shop\/view_shop-(\w+)\.htm.*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="2" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/view_shop\.htm\?.*(shop_nick=.+|shopid=\d+).*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="3" url="^http:\/\/store\.taobao\.com(:80)?\/shop\/(view_shop|viewshop)\.htm\?(user_number_id|shop_id)=\d+.*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="4" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/shop\/(view_shop|viewshop)\.htm(\?.*(catid=null&amp;.*&amp;browsetype=table|catid=\d+&amp;.*&amp;browsetype=)?)?$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="5" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?(\/\?asker=wangwang.*|\/\?ad_id=&amp;am_id=&amp;cm_id=&amp;pm_id=|\/\?.*browsetype=.*|\/\?tbg=.*|\/\?spm=.*|\/\?cn299\.com|\/\?2liang\.net|\/\?wangdian8link=.*|\/\?\w{32}=\w{32}|\/\?\w{10}=\w{10}|\/\?customsource=.*|\/\?gclid=.*|\/\?userid=.*|\/\?_lang=.*|\/\?ali_trackid=.*|\/\?source=.*|\/#.*|\/\?id=.*)?$" keyname="first" titlename="本店首页" except="(mall|itaobao)\.taobao\.com"></patten>
+                        <patten no="6" url="^http:\/\/(msn\.)?[\w-]+\.mall\.taobao\.com(:80)?(\/shop)?(\/custom-\d+\.htm.*|\/(view_shop\.htm)?\?asker=wangwang|\/\?ali_trackid=\d_\w{32}|\/\?tbg=.*|\/\?spm=.*|\/\?ngadid=.*|\/\?\w{10}=\w{10}|\/\?\w{32}=\w{32}|\/\?key=.*|\/\?ad_id=.*|\/\?wangdian8link=.*)?$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="7" url="^http:\/\/(shop\d+|[\w-]+)\.taobao\.com(:80)?\/\?.*browsetype=((table)?#pagebar)?$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="8" url="^http:\/\/(msn\.)?(shop\d+|[\w-]+)\.(mall\.)?taobao\.com(:80)?\/view_shop-\w+\.htm" keyname="first" titlename="本店首页"></patten>
+                        <patten no="9" url="^http:\/\/(msn\.)?shop\.tmall\.com(:80)?\/shop\/view_shop\.htm\?.*(nick=.+|shop_id=\d+|seller_id=\d+).*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="10" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?\/shop\/view_?shop\.htm.*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="11" url="^http:\/\/(msn\.)?[\w-]+\.tmall\.com(:80)?(\/shop)?(\/custom-\d+\.htm.*|\/(view_shop\.htm)?\?asker=wangwang|\/\?ali_trackid=\d_\w{32}|\/\?tbg=.*|\/\?spm=.*|\/\?ngadid=.*|\/\?\w{10}=\w{10}|\/\?\w{32}=\w{32}|\/\?key=.*|\/\?ad_id=.*|\/\?wangdian8link=.*)?$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="12" url="^http:\/\/(msn\.)?\w+\.tmall\.com(:80)?\/search-.*$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="13" url="^http:\/\/(msn\.)?(shop\d+|[\w-]+)\.tmall\.com(:80)?\/view_shop-\w+\.htm" keyname="first" titlename="本店首页"></patten>
+                        <patten no="14" url="^http:\/\/store\.taobao\.com(:80)?\/\?(shop_id|user_number_id)=\d+$" keyname="first" titlename="本店首页"></patten>
+                        <patten no="15" url="^http:\/\/\w+\.tmall\.com(:80)?\/shop\/view_?shop\.htm(\?prc=\d+|$)" keyname="first" titlename="本店首页"></patten>
+                        
+			<patten no="16" url="^http:\/\/item\.hitao\.com(:80)?\/shop\/shop-(\d+)\.htm$" keyname="first" titlename="本店首页"></patten>
+			<patten no="17" url="^http:\/\/(\w+)\.taobao\.com(:80)?$" keyname="first" titlename="本店首页"></patten>
+                
+		</first_page>
+        </taobao>
+</xmlconf>

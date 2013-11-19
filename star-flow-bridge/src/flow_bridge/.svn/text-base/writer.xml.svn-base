@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<BoltConfig>
-	
-	<!--   <LogOutput class="com.etao.lz.star.output.LogtodiskLogOutput"/>
-	-->
-	<LogOutput class="com.etao.lz.star.output.BroadcastLogOutput"/>
-	
-</BoltConfig>

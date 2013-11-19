@@ -1,8 +1,0 @@
-<?xml version="1.0" ?>
-<BoltConfig>
-	<LogOutput class="com.etao.lz.star.output.WriteToFileProcessor">
-	<Configuration>	
-		<Attribute name="write_path" value="/tmp/click.data" />
-	</Configuration>
-	</LogOutput>			
-</BoltConfig>

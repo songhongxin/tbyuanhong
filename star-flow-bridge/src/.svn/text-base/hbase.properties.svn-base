@@ -1,4 +1,0 @@
-hbaseport=3325
-timeToLive=-1
-zkcluster=my161205.cm6,my161206.cm6,my161207.cm6,my161208.cm6,my161209.cm6
-writeBufferSize=5242880

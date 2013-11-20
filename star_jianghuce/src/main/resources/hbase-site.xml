@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+
+	<property>
+	<name>hbase.client.keyvalue.maxsize</name>
+	<value>1048576</value>
+	</property>
+
+	<property>
+	<name>hbase.zookeeper.quorum</name>
+	<value>my161205.cm6,my161206.cm6,my161207.cm6,my161208.cm6,my161209.cm6</value>
+	</property>
+
+	<property>
+	<name>hbase.zookeeper.property.clientPort</name>
+	<value>3325</value>
+	</property>
+
+	<property>
+	<name>hbase.cluster.distributed</name>
+	<value>true</value>
+	</property>
+
+	<property>
+	<name>hbase.client.pause</name>
+	<value>100</value>
+	<description>General client pause value.  Used mostly as value to wait 
+	before running a retry of a failed get, region lookup, etc.</description>
+	</property>
+
+	<property>
+	<name>hbase.client.retries.number</name>
+	<value>10</value>
+	</property>
+
+</configuration>
